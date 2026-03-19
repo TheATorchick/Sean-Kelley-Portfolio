@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>index</title>
-<link href="main.css" rel="stylesheet" type="text/css">
-<link href="parallax.css" rel="stylesheet" type="text/css">
+
+<link href="main.css" rel="stylesheet">
+<link href="parallax.css" rel="stylesheet">
+<link href="menu.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/kyw8zdq.css">
+
 </head>
 
 <body>
@@ -17,15 +20,26 @@
 	</div>
 </section>
 
-<!-- Main Content -->
-<section> 
-	
-	<!-- Menu gets injected here -->
-	<div id="menu-placeholder"></div>
+<section>
 	<h1>Home Page</h1>
 </section>
 
-<!-- Script at bottom --> 
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Menu -->
+<div id="sideMenu" class="side-menu">
+	<span class="close-btn" id="closeBtn">&times;</span>
+	<a href="#">Home</a>
+	<a href="#">About</a>
+	<a href="#">Donate</a>
+	<a href="#">Contact</a>
+</div>
+
+<!-- Button -->
+<button class="menu-button" id="menuBtn">☰ Menu</button>
+<div class="test"></div>
 <script src="Javascript/script.js"></script>
+
 </body>
 </html>

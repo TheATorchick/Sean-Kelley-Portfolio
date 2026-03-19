@@ -1,7 +1,5 @@
 @charset "UTF-8";
-/* CSS Document */
-/* Side Menu */
-/* Overlay (background dim) */
+/* Overlay */
 .overlay {
 	position: fixed;
 	top: 0;
@@ -15,7 +13,6 @@
 	z-index: 900;
 }
 
-/* Show overlay */
 .overlay.active {
 	opacity: 1;
 	visibility: visible;
@@ -24,7 +21,7 @@
 /* Bottom Menu */
 .side-menu {
 	position: fixed;
-	bottom: -300px; /* hidden below screen */
+	bottom: -300px;
 	left: 0;
 	width: 100%;
 	height: 300px;
@@ -32,9 +29,9 @@
 	padding-top: 40px;
 	transition: bottom 0.3s ease;
 	z-index: 1000;
+	border-radius: 20px 20px 0 0;
 }
 
-/* Active state (slides up) */
 .side-menu.active {
 	bottom: 0;
 }
@@ -61,7 +58,7 @@
 	cursor: pointer;
 }
 
-/* Bottom Button (centered now) */
+/* Menu Button */
 .menu-button {
 	position: fixed;
 	bottom: 20px;
