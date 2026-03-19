@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test Page</title>
+
+<link href="main.css" rel="stylesheet">
+<link href="menu.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Bottom Menu -->
+<div id="sideMenu" class="side-menu">
+  <span class="close-btn" id="closeBtn">&times;</span>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Donate</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- Bottom Button -->
+<button class="menu-button" id="menuBtn">
+  ☰ Menu
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
