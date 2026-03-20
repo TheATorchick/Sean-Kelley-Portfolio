@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* CSS Document */
+/* ------------------ BUTTON ------------------ */
+.pdf-button {
+	background: #333;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	padding: 8px 12px;
+	cursor: pointer;
+	transition: 0.3s;
+	position: fixed;
+	bottom: 20px;
+	right: 5%;
+}
+.pdf-button:hover {
+	background: #555;
+}
+/* ------------------ OVERLAY ------------------ */
+#pdfOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s;
+	z-index: 1000;
+}
+#pdfOverlay.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+/* ------------------ SIDEBAR ------------------ */
+#pdfSidebar {
+	position: fixed;
+	top: 0;
+	right: -50%; /* hidden off screen */
+	width: 260px;
+	height: 100%;
+	background: #111;
+	padding: 20px;
+	overflow-y: auto;
+	transition: right 0.3s ease;
+	z-index: 1001;
+}
+#pdfSidebar.active {
+	right: 0; /* slides in */
+}
+/* Title */
+#pdfSidebar h3 {
+	color: white;
+	margin-top: 0;
+}
+/* Thumbnails */
+#pdfSidebar img {
+	width: 100%;
+	margin-bottom: 12px;
+	cursor: pointer;
+	border-radius: 6px;
+	transition: 0.2s;
+}
+#pdfSidebar img:hover {
+	transform: scale(1.05);
+}
+/* Active thumbnail */
+#pdfSidebar img.active {
+	outline: 3px solid lightblue;
+}
+/* ------------------ PDF VIEWER ------------------ */
+#pdfViewer {
+	width: 90%;
+	height: 100vh;
+	border: none;
+}
+.pdfContainer {
+	display: flex;
+	justify-content: center; /* centers horizontally */
+	align-items: center; /* centers vertically (optional) */
+	height: 100vh;
+}

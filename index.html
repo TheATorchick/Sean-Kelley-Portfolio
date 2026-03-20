@@ -2,12 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index</title>
-
-<link href="main.css" rel="stylesheet">
-<link href="parallax.css" rel="stylesheet">
-<link href="menu.css" rel="stylesheet">
+<title>Sean Kelley | Home</title>
+<link href="css/main.css" rel="stylesheet">
+<link href="css/parallax.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<link href="css/fade.css" rel="stylesheet">
+<link href="css/lightbox.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/kyw8zdq.css">
+<link rel="icon" href="/Images/fox-icon.png" type="image/png">
+
 
 </head>
 
@@ -16,30 +19,82 @@
 <!-- Parallax Section -->
 <section id="homeImage">
 	<div class="parallax">
-		<div class="pcontent">Sean Kelley</div>
+		<div class="pcontent">
+			Sean Kelley
+		</div>
 	</div>
 </section>
-
-<section>
+<section class="main">
 	<h1>Home Page</h1>
+	<h2>Home Page</h2>
+	<h3>Home Page</h3>
+	<h4>Home Page</h4>
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+	<img src="Images/guy playing with toys in the bathtub.gif" alt="Fox Paw">
 </section>
-
-<!-- Overlay -->
-<div id="overlay" class="overlay"></div>
-
-<!-- Menu -->
-<div id="sideMenu" class="side-menu">
-	<span class="close-btn" id="closeBtn">&times;</span>
-	<a href="#">Home</a>
-	<a href="#">About</a>
-	<a href="#">Donate</a>
-	<a href="#">Contact</a>
+<div id="ui-components">
+	
+	<!-- MENU BUTTON -->
+	<button class="menu-button" id="menuBtn">
+	<img src="Images/fox-paw.png" style="width: 24px;" alt="fox icon">
+	Menu </button>
+	
+	<!-- OVERLAY -->
+	<div id="overlay" class="overlay">
+	</div>
+	
+	<!-- MENU -->
+	<div id="sideMenu" class="side-menu">
+		<span class="close-btn" id="closeBtn">&times;</span>
+		<a href="index.html">Home</a>
+		<a href="about.html">About</a>
+		<a href="Portfolio.html">Portfolio</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	
+	<!-- LIGHTBOX -->
+	<div id="lightbox">
+		<span id="lightbox-close">&times;</span>
+		<img id="lightbox-img" alt="">
+		<button id="prevBtn">&#10094;</button>
+		<button id="nextBtn">&#10095;</button>
+		<div id="lightbox-thumbs">
+		</div>
+	</div>
+	
+	<!-- SCRIPTS -->
+	<script src="Javascript/script.js"></script>
+	<script src="Javascript/lightbox.js"></script>
 </div>
-
-<!-- Button -->
-<button class="menu-button" id="menuBtn">☰ Menu</button>
-<div class="test"></div>
-<script src="Javascript/script.js"></script>
-
+<footer id="footer">
+	<div id="footer-handle">
+		▲ Footer ▲
+	</div>
+	<div id="footerContent" class="footer-content">
+		<div class="ordered">
+			<h2>Sean Kelley</h2>
+		</div>
+		<div class="ordered">
+			<div>
+				<h3>Contact Information</h3>
+				<ul>
+					<li><a href="mailto:seantyler1902@gmail.com">Email</a></li>
+					<li><a href="https://www.linkedin.com/in/sean-kelley-577b6a317/">Linkedin</a></li>
+					<li>571-549-9005</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Sitemap</h3>
+				<dl>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="pdf.html">PDF Viewer</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</dl>
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>

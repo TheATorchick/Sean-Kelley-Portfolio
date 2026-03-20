@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+<link href="css/main.css" rel="stylesheet">
+<link href="css/parallax.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<link href="css/fade.css" rel="stylesheet">
+<link href="css/lightbox.css" rel="stylesheet">
+<link href="css/pdf.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/kyw8zdq.css">
+<style></style>
+</head>
+
+<body class="main">
+<h1>Portfolio</h1>
+
+	
+	<!-- MENU BUTTON -->
+<button id="pdfMenuBtn" class="pdf-button">
+  ☰ Projects
+</button>
+<!-- OVERLAY -->
+<div id="pdfOverlay"></div>
+
+<!-- SIDEBAR -->
+<div id="pdfSidebar">
+  <h3>Projects</h3>
+
+  <img src="Work/pumpkin.png" data-pdf="work/ART220_Ex6_SeanKelley_.pdf">
+  <img src="Work/menu.png" data-pdf="work/ART220_P2Final_SeanKelley.pdf">
+  <img src="Work/Layout.jpg" data-pdf="work/ART320_Layout_SeanKelley.pdf">
+  <img src="Work/sandwich.jpg" data-pdf="work/Project 2 Final.pdf">
+</div>
+
+<!-- PDF VIEWER -->
+	<div class="pdfContainer">
+<object id="pdfViewer" type="application/pdf" data="Work/ART220_Ex6_SeanKelley_.pdf"></object>
+		</div>
+<!-- UI COMPONENTS -->
+<div id="ui-components">
+	<button class="menu-button" id="menuBtn">
+	<img src="Images/fox-paw.png" style="width: 24px;" alt="fox icon">
+	Menu </button>
+	<div id="overlay" class="overlay">
+	</div>
+	<div id="sideMenu" class="side-menu">
+		<span class="close-btn" id="closeBtn">&times;</span>
+		<a href="index.html">Home</a>
+		<a href="about.html">About</a>
+		<a href="Portfolio.html">Portfolio</a>
+		<a href="contact.html">Contact</a>
+	</div>
+	<div id="lightbox">
+		<span id="lightbox-close">&times;</span>
+		<img id="lightbox-img" alt="">
+		<button id="prevBtn">&#10094;</button>
+		<button id="nextBtn">&#10095;</button>
+		<div id="lightbox-thumbs">
+		</div>
+	</div>
+</div>
+
+<!-- JAVASCRIPT (combined here) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const menuBtn = document.getElementById("pdfMenuBtn");
+  const sideMenu = document.getElementById("pdfSidebar");
+  const overlay = document.getElementById("pdfOverlay");
+  const viewer = document.getElementById("pdfViewer");
+
+  const thumbs = document.querySelectorAll("#pdfSidebar img");
+
+  // Safety check
+  if (!menuBtn || !sideMenu || !overlay || !viewer) {
+    console.error("Menu or PDF viewer elements missing.");
+    return;
+  }
+
+  /* ======================
+     OPEN MENU
+  ====================== */
+  menuBtn.addEventListener("click", () => {
+    sideMenu.classList.add("active");
+    overlay.classList.add("active");
+    menuBtn.classList.add("hidden");
+  });
+
+  /* ======================
+     CLOSE MENU FUNCTION
+  ====================== */
+  function closeMenu() {
+    sideMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    menuBtn.classList.remove("hidden"); // ✅ THIS FIXES IT
+  }
+
+  /* ======================
+     CLOSE MENU (overlay)
+  ====================== */
+  overlay.addEventListener("click", closeMenu);
+
+  /* ======================
+     CLOSE MENU (ESC key)
+  ====================== */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  /* ======================
+     LOAD PDF + CLOSE MENU
+  ====================== */
+  thumbs.forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      const pdfFile = thumb.getAttribute("data-pdf");
+
+      if (pdfFile) {
+        viewer.setAttribute("data", pdfFile);
+      }
+
+      closeMenu();
+    });
+  });
+
+});
+
+
+
+
+</script>
+<script src="Javascript/script.js"></script>
+<!--<script src="Javascript/lightbox.js"></script>-->
+<footer id="footer">
+	<div id="footer-handle">
+		▲ More
+	</div>
+	<div class="footer-content">
+		<h2>Footer</h2>
+		<p>Some content here...</p>
+	</div>
+</footer>
+</body>
+</html>

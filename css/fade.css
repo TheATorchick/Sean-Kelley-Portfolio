@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* CSS Document */
+.fade {
+	opacity: 0;
+	transform: translateY(40px);
+	animation: fadeInUp linear forwards;
+	animation-timeline: view();
+	animation-range: entry 0% cover 40%;
+}
+.hover {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	position: relative;
+	text-decoration: none;
+	color: inherit;
+}
+.hover:hover {
+	transform: translateY(-8px);
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+	color: white;
+}
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
