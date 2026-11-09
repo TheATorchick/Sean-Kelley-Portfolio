@@ -10,7 +10,6 @@
 <link href="css/lightbox.css" rel="stylesheet">
 <link href="css/pdf.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/kyw8zdq.css">
-<style></style>
 </head>
 
 <body class="main">
@@ -28,10 +27,10 @@
 <div id="pdfSidebar">
   <h3>Projects</h3>
 
-  <img src="Work/pumpkin.png" data-pdf="work/ART220_Ex6_SeanKelley_.pdf">
-  <img src="Work/menu.png" data-pdf="work/ART220_P2Final_SeanKelley.pdf">
-  <img src="Work/Layout.jpg" data-pdf="work/ART320_Layout_SeanKelley.pdf">
-  <img src="Work/sandwich.jpg" data-pdf="work/Project 2 Final.pdf">
+  <img src="Work/pumpkin.png" alt="Pumpkin illustration project" data-pdf="Work/ART220_Ex6_SeanKelley_.pdf" role="button" tabindex="0">
+  <img src="Work/menu.png" alt="Menu design project" data-pdf="Work/ART220_P2Final_SeanKelley.pdf" role="button" tabindex="0">
+  <img src="Work/Layout.jpg" alt="Layout design project" data-pdf="Work/ART320_Layout_SeanKelley.pdf" role="button" tabindex="0">
+  <img src="Work/sandwich.jpg" alt="Sandwich project" data-pdf="Work/Project 2 Final.pdf" role="button" tabindex="0">
 </div>
 
 <!-- PDF VIEWER -->
@@ -63,78 +62,12 @@
 </div>
 
 <!-- JAVASCRIPT (combined here) -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const menuBtn = document.getElementById("pdfMenuBtn");
-  const sideMenu = document.getElementById("pdfSidebar");
-  const overlay = document.getElementById("pdfOverlay");
-  const viewer = document.getElementById("pdfViewer");
-
-  const thumbs = document.querySelectorAll("#pdfSidebar img");
-
-  // Safety check
-  if (!menuBtn || !sideMenu || !overlay || !viewer) {
-    console.error("Menu or PDF viewer elements missing.");
-    return;
-  }
-
-  /* ======================
-     OPEN MENU
-  ====================== */
-  menuBtn.addEventListener("click", () => {
-    sideMenu.classList.add("active");
-    overlay.classList.add("active");
-    menuBtn.classList.add("hidden");
-  });
-
-  /* ======================
-     CLOSE MENU FUNCTION
-  ====================== */
-  function closeMenu() {
-    sideMenu.classList.remove("active");
-    overlay.classList.remove("active");
-    menuBtn.classList.remove("hidden"); // ✅ THIS FIXES IT
-  }
-
-  /* ======================
-     CLOSE MENU (overlay)
-  ====================== */
-  overlay.addEventListener("click", closeMenu);
-
-  /* ======================
-     CLOSE MENU (ESC key)
-  ====================== */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-
-  /* ======================
-     LOAD PDF + CLOSE MENU
-  ====================== */
-  thumbs.forEach(thumb => {
-    thumb.addEventListener("click", () => {
-      const pdfFile = thumb.getAttribute("data-pdf");
-
-      if (pdfFile) {
-        viewer.setAttribute("data", pdfFile);
-      }
-
-      closeMenu();
-    });
-  });
-
-});
-
-
-
-
-</script>
+<script src="Javascript/pdf.js"></script>
 <script src="Javascript/script.js"></script>
 <!--<script src="Javascript/lightbox.js"></script>-->
 <footer id="footer">
 	<div id="footer-handle">
-		▲ More
+		More
 	</div>
 	<div class="footer-content">
 		<h2>Footer</h2>
